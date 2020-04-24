@@ -516,6 +516,10 @@ function MultiStreamsMixer(arrayOfMediaStreams, elementClass) {
 
         context.clearRect(0, 0, canvas.width, canvas.height);
 
+        arrayOfMediaStreams.forEach(mediaStream => {
+            mediaStream.getTracks().forEach(track => track.stop())
+        })
+
         if (canvas.stream) {
             canvas.stream.stop();
             canvas.stream = null;
