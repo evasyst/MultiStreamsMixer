@@ -552,6 +552,10 @@ function MultiStreamsMixer(arrayOfMediaStreams, elementClass) {
         });
     }
 
+    this.getVideoStreams = function() {
+        return arrayOfMediaStreams;
+    }
+
     // for debugging
     this.name = 'MultiStreamsMixer';
     this.toString = function() {
